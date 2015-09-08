@@ -62,7 +62,7 @@ Or just try at **your-project-domain/admin/language/texts**
 
 ## Screenshots
 
-See [use-dick-website](usedick.com)
+See http://usedick.com
 
 ## Change log
 
@@ -99,7 +99,6 @@ If you discover any security related issues, please email alin@updivision.com or
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[use-dick-website]: http://usedick.com
 [ico-version]: https://img.shields.io/packagist/v/dick/translationmanager.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/dick/translationmanager/master.svg?style=flat-square
