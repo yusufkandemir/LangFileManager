@@ -36,7 +36,15 @@ $ php artisan db:seed --class="Dick\TranslationManager\database\seeds\LanguageTa
 
 ## Usage
 
-Add the menu elements for it:
+Tell TranslationManager what langfiles NOT to show, in config/admin.php, in the 'language_ignore' variable:
+
+``` php
+// Language files to NOT show in the Translation Manager
+//
+'language_ignore' => ['admin', 'pagination', 'reminders', 'validation', 'log', 'crud'],
+```
+
+Then add the menu elements for it, in config/admin.php in the 'menu' variable:
 
 ``` php
 [
