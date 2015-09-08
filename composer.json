@@ -36,7 +36,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Dick\\Translationmanager\\": "src"
+            "Dick\\TranslationManager\\": "src"
         }
     },
     "autoload-dev": {
