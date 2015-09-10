@@ -17,6 +17,8 @@ class LanguageTableSeeder extends Seeder
             'app_name' 	=> 'english',
             'flag' 		=> '',
             'abbr' 		=> 'en',
+            'script'    => 'Latn',
+            'native'    => 'English',
             'active' 	=> '1',
             'default' 	=> '1',
         ]);
@@ -26,7 +28,9 @@ class LanguageTableSeeder extends Seeder
             'app_name' 	=> 'romanian',
             'flag' 		=> '',
             'abbr' 		=> 'ro',
-            'active' 	=> '0',
+            'script'    => 'Latn',
+            'native'    => 'română',
+            'active' 	=> '1',
             'default' 	=> '0',
         ]);
 
@@ -35,6 +39,8 @@ class LanguageTableSeeder extends Seeder
             'app_name' 	=> 'french',
             'flag' 		=> '',
             'abbr' 		=> 'fr',
+            'script'    => 'Latn',
+            'native'    => 'français',
             'active' 	=> '0',
             'default' 	=> '0',
         ]);
@@ -44,6 +50,8 @@ class LanguageTableSeeder extends Seeder
             'app_name' 	=> 'italian',
             'flag' 		=> '',
             'abbr' 		=> 'it',
+            'script'    => 'Latn',
+            'native'    => 'italiano',
             'active' 	=> '0',
             'default' 	=> '0',
         ]);
@@ -53,6 +61,8 @@ class LanguageTableSeeder extends Seeder
             'app_name' 	=> 'spanish',
             'flag' 		=> '',
             'abbr' 		=> 'es',
+            'script'    => 'Latn',
+            'native'    => 'español',
             'active' 	=> '0',
             'default' 	=> '0',
         ]);
@@ -62,6 +72,8 @@ class LanguageTableSeeder extends Seeder
             'app_name' 	=> 'german',
             'flag' 		=> '',
             'abbr' 		=> 'de',
+            'script'    => 'Latn',
+            'native'    => 'Deutsch',
             'active' 	=> '0',
             'default' 	=> '0',
         ]);
