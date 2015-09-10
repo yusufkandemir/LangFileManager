@@ -19,6 +19,11 @@ All Notable changes to `TranslationManager` will be documented in this file
 ### Security
 - Nothing
 
+## [1.0.2] - 2015-09-10
+
+### Added
+- Migrations and seeds for Laravel-Localizable integration.
+- Extra methods on the Language model.
 
 ## [1.0.0] - 2015-09-07
 
