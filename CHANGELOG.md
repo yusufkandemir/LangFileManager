@@ -20,6 +20,14 @@ All Notable changes to `Backpack LangFileManager` will be documented in this fil
 - Nothing
 
 
+
+## [1.0.6] - 2016-03-12
+
+### Fixed
+- Lang files are pushed in the correct folder now. For realsies.
+- Backpack\CRUD is now a composer requirement.
+
+
 ## [1.0.5] - 2016-03-12
 
 ### Fixed

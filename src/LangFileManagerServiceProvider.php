@@ -32,7 +32,7 @@ class LangFileManagerServiceProvider extends ServiceProvider
         // publish views
         $this->publishes([ __DIR__.'/resources/views' => resource_path('views/vendor/backpack/langfilemanager'), ], 'views');
         // publish lang files
-        $this->publishes([ __DIR__.'/resources/lang' => resource_path('lang'), ], 'lang');
+        $this->publishes([ __DIR__.'/resources/lang' => resource_path('lang/vendor/backpack'), ], 'lang');
 
         // use the vendor configuration file as fallback
         $this->mergeConfigFrom( __DIR__.'/config/langfilemanager.php', 'langfilemanager' );
