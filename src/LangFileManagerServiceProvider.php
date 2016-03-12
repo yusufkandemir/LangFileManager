@@ -2,7 +2,7 @@
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Routing\Router;
-use Backpack\LangFileManager\Services\LangFiles;
+use Backpack\LangFileManager\app\Services\LangFiles;
 
 class LangFileManagerServiceProvider extends ServiceProvider
 {
@@ -45,9 +45,9 @@ class LangFileManagerServiceProvider extends ServiceProvider
      */
     public function setupRoutes(Router $router)
     {
-        $router->group(['namespace' => 'Backpack\LangFileManager\Http\Controllers'], function($router)
+        $router->group(['namespace' => 'Backpack\LangFileManager\app\Http\Controllers'], function($router)
         {
-            require __DIR__.'/Http/routes.php';
+            require __DIR__.'/app/Http/routes.php';
         });
     }
     /**

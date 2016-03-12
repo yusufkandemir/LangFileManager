@@ -20,6 +20,13 @@ All Notable changes to `Backpack LangFileManager` will be documented in this fil
 - Nothing
 
 
+## [1.0.5] - 2016-03-12
+
+### Fixed
+- Change folder structure to resemble a Laravel app and other Backpack packages.
+- Added the empty_file translation key in langfilemanager's language file.
+
+
 ## [1.0.4] - 2016-03-12
 
 ### Fixed

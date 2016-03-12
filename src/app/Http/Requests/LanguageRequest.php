@@ -1,7 +1,7 @@
-<?php namespace Dick\TranslationManager\Http\Requests;
+<?php namespace Backpack\TranslationManager\app\Http\Requests;
 
 use App\Http\Requests\Request;
-use Dick\CRUD\Http\Requests\CrudRequest as CrudRequest;
+use Backpack\CRUD\app\Http\Requests\CrudRequest as CrudRequest;
 
 class LanguageRequest extends CrudRequest {
 
@@ -13,7 +13,7 @@ class LanguageRequest extends CrudRequest {
 	public function authorize()
 	{
 		// only allow creates if the user is logged in
-		return \Auth::check() && (\Entrust::hasRole('superadmin'));
+		return \Auth::check();
 	}
 
 	/**

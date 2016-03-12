@@ -1,20 +1,20 @@
-<?php namespace Backpack\LangFileManager\Http\Controllers;
+<?php namespace Backpack\LangFileManager\app\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-use Backpack\LangFileManager\Services\LangFiles;
-use Backpack\LangFileManager\Models\Language;
+use Backpack\LangFileManager\app\Services\LangFiles;
+use Backpack\LangFileManager\app\Models\Language;
 
 use Illuminate\Http\Request;
 // VALIDATION: change the requests to match your own file names if you need form validation
-use Backpack\LangFileManager\Http\Requests\LanguageRequest as StoreRequest;
-use Backpack\LangFileManager\Http\Requests\LanguageRequest as UpdateRequest;
+use Backpack\LangFileManager\app\Http\Requests\LanguageRequest as StoreRequest;
+use Backpack\LangFileManager\app\Http\Requests\LanguageRequest as UpdateRequest;
 
 class LanguageCrudController extends CrudController {
 
 	public $crud = array(
-						"model" => "Backpack\LangFileManager\Models\Language",
+						"model" => "Backpack\LangFileManager\app\Models\Language",
 						"entity_name" => "language",
 						"entity_name_plural" => "languages",
 						"route" => "admin/language",

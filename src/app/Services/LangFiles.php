@@ -1,4 +1,4 @@
-<?php namespace Backpack\LangFileManager\Services;
+<?php namespace Backpack\LangFileManager\app\Services;
 
 class LangFiles {
 

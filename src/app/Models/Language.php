@@ -1,4 +1,4 @@
-<?php namespace Backpack\LangFileManager\Models;
+<?php namespace Backpack\LangFileManager\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;

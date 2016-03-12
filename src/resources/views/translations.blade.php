@@ -67,7 +67,7 @@
 				</div>
 			{!! Form::close() !!}
 		@else
-			<em>{{{ trans('crud.empty_file') }}}</em>
+			<em>{{{ trans('backpack::langfilemanager.empty_file') }}}</em>
 		@endif
 	</section>
     </div><!-- /.box-body -->
