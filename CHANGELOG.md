@@ -20,6 +20,10 @@ All Notable changes to `Backpack LangFileManager` will be documented in this fil
 - Nothing
 
 
+## [1.0.7] - 2016-03-12
+
+### Fixed
+- LangFileManager can no longer use package lang files for backup, because that broke all other packages' backup lang files. Lang files for this package need to be published.
 
 ## [1.0.6] - 2016-03-12
 
