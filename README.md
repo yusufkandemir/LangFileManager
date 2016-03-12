@@ -1,4 +1,4 @@
-# translationmanager
+# Backpack\LangFileManager
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
@@ -7,7 +7,7 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-A quick interface to edit Laravel language files, for Dick Admin.
+A quick interface to edit language files, for Laravel Backpack.
 
 
 ## Install
@@ -15,7 +15,7 @@ A quick interface to edit Laravel language files, for Dick Admin.
 ### Step 1. Install via Composer
 
 ``` bash
-$ composer require dick/translationmanager
+$ composer require backpack/langfilemanager
 ```
 
 ### Step 2. Add the service provider 
@@ -23,23 +23,26 @@ $ composer require dick/translationmanager
 In your config/app.php, add this to the providers array:
 
 ``` bash
-'Dick\TranslationManager\TranslationManagerServiceProvider',
+Backpack\LangFileManager\LangFileManagerServiceProvider::class,
 ```
 
 ### Step 3. Run the migration and seed
 
 ``` bash
-$ php artisan migrate --path=vendor/dick/translationmanager/src/database/migrations
-$ php artisan db:seed --class="Dick\TranslationManager\database\seeds\LanguageTableSeeder"
+$ php artisan migrate --path=vendor/backpack/langfilemanager/src/database/migrations
+$ php artisan db:seed --class="Backpack\LangFileManager\database\seeds\LanguageTableSeeder"
+$ php artisan vendor:publish --provider="Backpack\LangFileManager\LangFileManagerServiceProvider" --tag="config" #publish the config file
 ```
 
 
 ## Usage
 
-Tell TranslationManager what langfiles NOT to show, in config/admin.php, in the 'language_ignore' variable:
+// TODO: change variable to "protected_lang_files" or smth like that
+
+Tell LangFileManager what langfiles NOT to show, in config/admin.php, in the 'language_ignore' variable:
 
 ``` php
-// Language files to NOT show in the Translation Manager
+// Language files to NOT show in the LangFileManager
 //
 'language_ignore' => ['admin', 'pagination', 'reminders', 'validation', 'log', 'crud'],
 ```
@@ -70,7 +73,9 @@ Or just try at **your-project-domain/admin/language/texts**
 
 ## Screenshots
 
-See http://usedick.com
+See http://laravelbackpack.com
+
+// TODO: include screenshots in readme
 
 ## Change log
 
@@ -98,8 +103,8 @@ If you discover any security related issues, please email alin@updivision.com or
 
 ## Credits
 
-- [Alin Ghitu][link-author]
-- [Cristian Tabacitu][link-author-2]
+- [Alin Ghitu][link-author] - author
+- [Cristian Tabacitu][link-author-2] - contributor
 - [All Contributors][link-contributors]
 
 
@@ -107,18 +112,18 @@ If you discover any security related issues, please email alin@updivision.com or
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/dick/translationmanager.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/backpack/langfilemanager.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/dick/translationmanager/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/dick/translationmanager.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/dick/translationmanager.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/dick/translationmanager.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/backpack/langfilemanager/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/backpack/langfilemanager.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/backpack/langfilemanager.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/backpack/langfilemanager.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/dick/translationmanager
-[link-travis]: https://travis-ci.org/dick/translationmanager
-[link-scrutinizer]: https://scrutinizer-ci.com/g/dick/translationmanager/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/dick/translationmanager
-[link-downloads]: https://packagist.org/packages/dick/translationmanager
+[link-packagist]: https://packagist.org/packages/backpack/langfilemanager
+[link-travis]: https://travis-ci.org/backpack/langfilemanager
+[link-scrutinizer]: https://scrutinizer-ci.com/g/backpack/langfilemanager/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/backpack/langfilemanager
+[link-downloads]: https://packagist.org/packages/backpack/langfilemanager
 [link-author]: https://github.com/ghitu
-[link-author-2]: https://github.com/tabacitu
+[link-author-2]: http://tabacitu.ro
 [link-contributors]: ../../contributors

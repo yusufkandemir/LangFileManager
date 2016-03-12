@@ -1,4 +1,4 @@
-<?php namespace Dick\TranslationManager\database\seeds;
+<?php namespace Backpack\LangFileManager\database\seeds;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;

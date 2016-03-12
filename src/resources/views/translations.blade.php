@@ -1,6 +1,6 @@
-@extends('admin.layout')
+@extends('backpack::layout')
 
-@section('content-header')
+@section('header')
 	<section class="content-header">
 	  <h1>
 	    Translate <span class="text-lowercase">site texts</span>
@@ -74,7 +74,7 @@
   </div><!-- /.box -->
 @endsection
 
-@section('scripts')
+@section('after_scripts')
 	<script>
 		jQuery(document).ready(function($) {
 			$("#language_switch").change(function() {

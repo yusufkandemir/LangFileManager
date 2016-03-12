@@ -1,7 +1,7 @@
-<?php namespace Dick\TranslationManager\Models;
+<?php namespace Backpack\LangFileManager\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Dick\CRUD\CrudTrait;
+use Backpack\CRUD\CrudTrait;
 
 class Language extends Model {
 

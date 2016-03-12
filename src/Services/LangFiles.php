@@ -1,4 +1,4 @@
-<?php namespace Dick\TranslationManager\Services;
+<?php namespace Backpack\LangFileManager\Services;
 
 class LangFiles {
 
@@ -67,7 +67,7 @@ class LangFiles {
 		foreach (scandir($this->getLangPath(), SCANDIR_SORT_DESCENDING) as $file) {
 			$fileName = str_replace('.php', '', $file);
 
-			if (!in_array($fileName, array_merge(['.', '..'], config('admin.language_ignore')))) {
+			if (!in_array($fileName, array_merge(['.', '..'], config('langfilemanager.language_ignore')))) {
 				$fileList[] = [
 					'name' => ucfirst(str_replace('_', ' ', $fileName)),
 					'url' => url("admin/language/texts/{$this->lang}/{$fileName}"),
@@ -121,9 +121,9 @@ class LangFiles {
 		}
 		foreach ($fileArray as $key => $item) {
 			if (is_array($item)) {
-				echo view()->make('translationmanager::language_headers', ['header' => $key, 'parents' => $parents, 'level' => $level, 'item' => $item, 'langfile'=>$this, 'lang_file_name' => $this->file])->render();
+				echo view()->make('langfilemanager::language_headers', ['header' => $key, 'parents' => $parents, 'level' => $level, 'item' => $item, 'langfile'=>$this, 'lang_file_name' => $this->file])->render();
 			} else {
-				echo view()->make('translationmanager::language_inputs', ['key' => $key, 'item' => $item, 'parents' => $parents, 'lang_file_name' => $this->file])->render();
+				echo view()->make('langfilemanager::language_inputs', ['key' => $key, 'item' => $item, 'parents' => $parents, 'lang_file_name' => $this->file])->render();
 			}
 		}
 	}

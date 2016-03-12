@@ -1,7 +1,12 @@
 {
-    "name": "dick/translationmanager",
-    "description": "An interface to edit Laravel language files, for Dick Admin.",
+    "name": "backpack/langfilemanager",
+    "description": "An interface to edit language files, for Laravel Backpack.",
     "keywords": [
+        "backpack",
+        "laravel backpack",
+        "lang files",
+        "lang file manager",
+        "language",
         "dick",
         "tabacitu",
         "updivision",
@@ -9,9 +14,10 @@
         "dickadmin",
         "laravel",
         "admin panel",
-        "translationmanager"
+        "translationmanager",
+        "dick translationmanager"
     ],
-    "homepage": "https://github.com/tabacitu/translationmanager",
+    "homepage": "https://github.com/laravel-backpack/langfilemanager",
     "license": "MIT",
     "authors": [
         {
@@ -36,12 +42,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Dick\\TranslationManager\\": "src"
+            "Backpack\\LangFileManager\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Dick\\Translationmanager\\Test\\": "tests"
+            "Backpack\\LangFileManager\\Test\\": "tests"
         }
     },
     "scripts": {

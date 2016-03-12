@@ -1,7 +1,7 @@
 <?php
 
 // Admin Interface Routes
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function()
+Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function()
 {
 	// Language
 	Route::get('language/texts/{lang?}/{file?}', 'LanguageCrudController@showTexts');

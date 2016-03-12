@@ -1,20 +1,20 @@
-<?php namespace Dick\TranslationManager\Http\Controllers;
+<?php namespace Backpack\LangFileManager\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Dick\CRUD\Http\Controllers\CrudController;
-use Dick\TranslationManager\Services\LangFiles;
-use Dick\TranslationManager\Models\Language;
+use Backpack\CRUD\app\Http\Controllers\CrudController;
+use Backpack\LangFileManager\Services\LangFiles;
+use Backpack\LangFileManager\Models\Language;
 
 use Illuminate\Http\Request;
 // VALIDATION: change the requests to match your own file names if you need form validation
-use Dick\TranslationManager\Http\Requests\LanguageRequest as StoreRequest;
-use Dick\TranslationManager\Http\Requests\LanguageRequest as UpdateRequest;
+use Backpack\LangFileManager\Http\Requests\LanguageRequest as StoreRequest;
+use Backpack\LangFileManager\Http\Requests\LanguageRequest as UpdateRequest;
 
 class LanguageCrudController extends CrudController {
 
 	public $crud = array(
-						"model" => "Dick\TranslationManager\Models\Language",
+						"model" => "Backpack\LangFileManager\Models\Language",
 						"entity_name" => "language",
 						"entity_name_plural" => "languages",
 						"route" => "admin/language",
@@ -84,7 +84,7 @@ class LanguageCrudController extends CrudController {
 	public function showTexts(LangFiles $langfile, Language $languages, $lang = '', $file = 'site') {
 		// SECURITY
 		// check if that file isn't forbidden in the config file
-		if (in_array($file, config('admin.language_ignore'))) {
+		if (in_array($file, config('langfilemanager.language_ignore'))) {
 			abort('403', 'This language file cannot be edited online.');
 		}
 
@@ -103,13 +103,13 @@ class LanguageCrudController extends CrudController {
 		$this->data['fileArray'] = $langfile->getFileContent();
 		$this->data['langfile'] = $langfile;
 
-		return view('translationmanager::translations', $this->data);
+		return view('langfilemanager::translations', $this->data);
 	}
 
 	public function updateTexts(LangFiles $langfile, Request $request, $lang = '', $file = 'site'){
 		// SECURITY
 		// check if that file isn't forbidden in the config file
-		if (in_array($file, config('admin.language_ignore'))) {
+		if (in_array($file, config('langfilemanager.language_ignore'))) {
 			abort('403', 'This language file cannot be edited online.');
 		}
 

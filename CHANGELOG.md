@@ -1,6 +1,6 @@
 # Changelog
 
-All Notable changes to `TranslationManager` will be documented in this file
+All Notable changes to `Backpack LangFileManager` will be documented in this file
 
 ## NEXT - YYYY-MM-DD
 
@@ -18,6 +18,13 @@ All Notable changes to `TranslationManager` will be documented in this file
 
 ### Security
 - Nothing
+
+## [1.0.3] - 2016-03-12
+
+### Fixed
+- Renamed from Dick\TranslationManager to Backpack\TranslationManager.
+- Now using separate config file.
+
 
 ## [1.0.2] - 2015-09-10
 
