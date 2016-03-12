@@ -19,6 +19,13 @@ All Notable changes to `Backpack LangFileManager` will be documented in this fil
 ### Security
 - Nothing
 
+
+## [1.0.4] - 2016-03-12
+
+### Fixed
+- Using a separate lang file from other Backpack packages, which can be published.
+
+
 ## [1.0.3] - 2016-03-12
 
 ### Fixed

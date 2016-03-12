@@ -34,7 +34,7 @@
 	  </h3>
 	</div>
     <div class="box-body">
-    	<p><em>{!! trans('crud.rules_text') !!}</em></p>
+    	<p><em>{!! trans('backpack::langfilemanager.rules_text') !!}</em></p>
     	<br>
 		<ul class="nav nav-tabs">
 			@foreach ($langFiles as $file)

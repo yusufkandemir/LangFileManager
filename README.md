@@ -26,12 +26,13 @@ In your config/app.php, add this to the providers array:
 Backpack\LangFileManager\LangFileManagerServiceProvider::class,
 ```
 
-### Step 3. Run the migration and seed
+### Step 3. Run the migration, seed and file publishing
 
 ``` bash
 $ php artisan migrate --path=vendor/backpack/langfilemanager/src/database/migrations
 $ php artisan db:seed --class="Backpack\LangFileManager\database\seeds\LanguageTableSeeder"
 $ php artisan vendor:publish --provider="Backpack\LangFileManager\LangFileManagerServiceProvider" --tag="config" #publish the config file
+$ php artisan vendor:publish --provider="Backpack\LangFileManager\LangFileManagerServiceProvider" --tag="lang" #publish the lang files
 ```
 
 
@@ -39,7 +40,7 @@ $ php artisan vendor:publish --provider="Backpack\LangFileManager\LangFileManage
 
 // TODO: change variable to "protected_lang_files" or smth like that
 
-Tell LangFileManager what langfiles NOT to show, in config/admin.php, in the 'language_ignore' variable:
+Tell LangFileManager what langfiles NOT to show, in config/backpack/langfilemanager.php:
 
 ``` php
 // Language files to NOT show in the LangFileManager
@@ -47,26 +48,29 @@ Tell LangFileManager what langfiles NOT to show, in config/admin.php, in the 'la
 'language_ignore' => ['admin', 'pagination', 'reminders', 'validation', 'log', 'crud'],
 ```
 
-Then add the menu elements for it, in config/admin.php in the 'menu' variable:
+Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar.blade.php:
 
-``` php
-[
-    'label' => "Translations",
-    'route' => "",
-    'icon' => 'fa fa-globe',
-    'children' => [
-        [
-            'label' => "Languages",
-            'route' => 'admin/language',
-            'icon' => 'fa fa-flag-checkered',
-        ],
-        [
-            'label' => "Site texts",
-            'route' => 'admin/language/texts',
-            'icon' => 'fa fa-language',
-        ],
-    ]
-],
+```html
+<li class="treeview">
+            <a href="#"><i class="fa fa-globe"></i> <span>Translations</span> <i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a href="{{ url('admin/language') }}"><i class="fa fa-flag-checkered"></i> Languages</a></li>
+              <li><a href="{{ url('admin/language/texts') }}"><i class="fa fa-language"></i> Site texts</a></li>
+            </ul>
+          </li>
+```
+
+or in menu.blade.php:
+```html
+<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+            <i class="fa fa-globe"></i> Translations<span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li class=""><a href="{{ url('admin/language') }}"><i class="fa fa-flag-checkered"></i> Languages</a></li>
+            <li class=""><a href="{{ url('admin/language/texts') }}"><i class="fa fa-language"></i> Site texts</a></li>
+          </ul>
+        </li>
 ```
 
 Or just try at **your-project-domain/admin/language/texts**
