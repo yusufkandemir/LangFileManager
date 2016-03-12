@@ -9,6 +9,7 @@
 
 A quick interface to edit language files, for Laravel Backpack.
 
+![Edit view for Backpack/LangFileManager](https://dl.dropboxusercontent.com/u/2431352/backpack_langfilemanager.png)
 
 ## Install
 
@@ -78,8 +79,6 @@ Or just try at **your-project-domain/admin/language/texts**
 ## Screenshots
 
 See http://laravelbackpack.com
-
-// TODO: include screenshots in readme
 
 ## Change log
 
