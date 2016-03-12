@@ -25,7 +25,7 @@ class LangFileManagerServiceProvider extends ServiceProvider
         // - then the stock views that come with the package, in case a published view might be missing
         $this->loadViewsFrom(realpath(__DIR__.'/resources/views'), 'langfilemanager');
 
-        $this->loadTranslationsFrom(realpath(__DIR__.'/resources/lang'), 'backpack');
+        // $this->loadTranslationsFrom(realpath(__DIR__.'/resources/lang'), 'backpack');
 
         // publish config file
         $this->publishes([ __DIR__.'/config/langfilemanager.php' => config_path('backpack/langfilemanager.php') ], 'config');

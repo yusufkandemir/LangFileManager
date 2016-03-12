@@ -8,7 +8,7 @@
 	  <ol class="breadcrumb">
 	    <li><a href="{{ url('admin/dashboard') }}">Admin</a></li>
 	    <li><a href="{{ url($crud['route']) }}" class="text-capitalize">{{ $crud['entity_name_plural'] }}</a></li>
-	    <li class="active">{{ trans('crud.edit') }} texts</li>
+	    <li class="active">{{ trans('backpack::crud.edit') }} texts</li>
 	  </ol>
 	</section>
 @endsection
@@ -48,7 +48,7 @@
 		<section class="lang-inputs">
 		@if (!empty($fileArray))
 			{!! Form::open(array('url' => url("admin/language/texts/{$currentLang}/{$currentFile}"), 'method' => 'post', 'id' => 'lang-form', 'class' => 'form-horizontal', 'data-required' => trans('admin.language.fields_required'))) !!}
-				{!! Form::button(trans('crud.save'), array('type' => 'submit', 'class' => 'btn btn-success submit pull-right hidden-xs hidden-sm', 'style' => "margin-top: -60px;")) !!}
+				{!! Form::button(trans('backpack::crud.save'), array('type' => 'submit', 'class' => 'btn btn-success submit pull-right hidden-xs hidden-sm', 'style' => "margin-top: -60px;")) !!}
 				<div class="form-group hidden-sm hidden-xs">
 					<div class="col-sm-2 text-right">
 						<h4>Key</h4>
@@ -63,7 +63,7 @@
 				{!! $langfile->displayInputs($fileArray) !!}
 				<hr>
 				<div class="text-center">
-					{!! Form::button(trans('crud.save'), array('type' => 'submit', 'class' => 'btn btn-success submit')) !!}
+					{!! Form::button(trans('backpack::crud.save'), array('type' => 'submit', 'class' => 'btn btn-success submit')) !!}
 				</div>
 			{!! Form::close() !!}
 		@else
