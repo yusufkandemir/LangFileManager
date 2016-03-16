@@ -102,6 +102,7 @@ class LanguageCrudController extends CrudController {
 		$this->data['langFiles'] = $langfile->getlangFiles();
 		$this->data['fileArray'] = $langfile->getFileContent();
 		$this->data['langfile'] = $langfile;
+		$this->data['title'] = "Translations";
 
 		return view('langfilemanager::translations', $this->data);
 	}
