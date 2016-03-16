@@ -117,15 +117,15 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 [ico-version]: https://img.shields.io/packagist/v/backpack/langfilemanager.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/backpack/langfilemanager/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/backpack/langfilemanager.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/backpack/langfilemanager.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/laravel-backpack/langfilemanager/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/laravel-backpack/langfilemanager.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/laravel-backpack/langfilemanager.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/backpack/langfilemanager.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/backpack/langfilemanager
-[link-travis]: https://travis-ci.org/backpack/langfilemanager
-[link-scrutinizer]: https://scrutinizer-ci.com/g/backpack/langfilemanager/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/backpack/langfilemanager
+[link-travis]: https://travis-ci.org/laravel-backpack/langfilemanager
+[link-scrutinizer]: https://scrutinizer-ci.com/g/laravel-backpack/langfilemanager/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/laravel-backpack/langfilemanager
 [link-downloads]: https://packagist.org/packages/backpack/langfilemanager
 [link-author]: https://github.com/ghitu
 [link-author-2]: http://tabacitu.ro
