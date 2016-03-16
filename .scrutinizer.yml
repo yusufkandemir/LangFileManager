@@ -23,10 +23,6 @@ tools:
         excluded_dirs:
             - vendor
             - tests
-    external_code_coverage:
-        timeout: '3600'
-        runs: 3
-
 checks:
     php:
         code_rating: true
