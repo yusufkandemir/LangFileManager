@@ -9,6 +9,8 @@
 
 A quick interface to edit language files, for Laravel Backpack.
 
+**Subscribe to the [Mailchimp list](http://eepurl.com/bUEGjf) to be up to date with the community.** 
+
 ![Edit view for Backpack/LangFileManager](https://dl.dropboxusercontent.com/u/2431352/backpack_langfilemanager.png)
 
 ## Install
