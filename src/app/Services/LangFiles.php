@@ -22,9 +22,7 @@ class LangFiles {
 
 	/**
 	 * get the content of a language file as an array sorted ascending
-	 * @param 	String		$lang		the language (abbrevation) for which the file is edited
-	 * @param 	String		$file		the file that is edited
-	 * @return	Array/Bool
+	 * @return	Array
 	 */
 	public function getFileContent() {
 
@@ -42,23 +40,22 @@ class LangFiles {
 	/**
 	 * rewrite the file with the modified texts
 	 * @param	Array 		$postArray	the data received from the form
-	 * @param	String		$lang     	the language
-	 * @param	String		$file     	the file
 	 * @return  Integer
 	 */
 	public function setFileContent($postArray) {
 
 		$postArray = $this->prepareContent($postArray);
 
-		$return = (int)file_put_contents( $this->getFilePath(), print_r("<?php \n\n return ".$this->var_export54($postArray).";", true));
+		$return = (int) file_put_contents (
+				$this->getFilePath(),
+				print_r("<?php \n\n return ".$this->var_export54($postArray).";", true)
+			);
 
 		return $return;
 	}
 
 	/**
 	 * get the language files that can be edited, to ignore a file add it in the config/admin file to language_ignore key
-	 * @param 	String		$lang      		the language (abbrevation) for which we want the language files
-	 * @param 	String		$activeFile		the file that is opened for editing
 	 * @return	Array
 	 */
 	public function getlangFiles() {
@@ -136,16 +133,6 @@ class LangFiles {
 	private function prepareContent($postArray) {
 		$returnArray = [];
 
-		/**
-		 * function used to concatenate two arrays key by key
-		 * @param 	String		$item1		value from the first array
-		 * @param 	String		$item2		value from the second array
-		 * @return	String
-		 */
-		function combine($item1, $item2) {
-			return $item1.$item2;
-		}
-
 		unset($postArray['_token']);
 
 		foreach ($postArray as $key => $item) {
@@ -153,7 +140,13 @@ class LangFiles {
 
 			if (is_array($item)) {
 				if (isset($item['before'])) {
-					$value = $this->sanitize(implode('|', array_map(function($item1, $item2) {return $item1.$item2;}, str_replace('|', '&#124;', $item['before']), str_replace('|', '&#124;',$item['after']))));
+					$items_arr = array_map(
+							function($item1, $item2) {
+								return $item1.$item2;
+							},
+							str_replace('|', '&#124;', $item['before']), str_replace('|', '&#124;',$item['after'])
+						);
+					$value = $this->sanitize(implode('|', $items_arr));
 				} else {
 					$value = $this->sanitize(implode('|', str_replace('|', '&#124;', $item['after'])));
 				}
