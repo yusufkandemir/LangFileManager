@@ -22,7 +22,7 @@ class LangFiles {
 
 	/**
 	 * get the content of a language file as an array sorted ascending
-	 * @return	Array
+	 * @return	Array|False
 	 */
 	public function getFileContent() {
 
