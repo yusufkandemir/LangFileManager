@@ -5,6 +5,7 @@
 [![Build Status][ico-travis]][link-travis]
 [![Coverage Status][ico-scrutinizer]][link-scrutinizer]
 [![Quality Score][ico-code-quality]][link-code-quality]
+[![Style CI](https://styleci.io/repos/53691643/shield)](https://styleci.io/repos/53691643)
 [![Total Downloads][ico-downloads]][link-downloads]
 
 A quick interface to edit language files, for Laravel Backpack.
