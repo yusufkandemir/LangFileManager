@@ -64,7 +64,9 @@ class LangFileManagerServiceProvider extends ServiceProvider
         $this->registerLangFileManager();
         $this->setupRoutes($this->app->router);
 
-        $this->app->singleton('langfile', function ($app) { return new LangFiles($app['config']['app']['locale']); });
+        $this->app->singleton('langfile', function ($app) {
+            return new LangFiles($app['config']['app']['locale']);
+        });
 
         // use this if your package has a config file
         // config([
