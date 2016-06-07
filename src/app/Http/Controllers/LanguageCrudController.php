@@ -13,11 +13,12 @@ use Backpack\LangFileManager\app\Http\Requests\LanguageRequest as UpdateRequest;
 
 class LanguageCrudController extends CrudController
 {
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
 
         $this->crud->setModel("Backpack\LangFileManager\app\Models\Language");
-        $this->crud->setRoute("admin/language");
+        $this->crud->setRoute('admin/language');
         $this->crud->setEntityNameStrings('language', 'languages');
 
         $this->crud->setColumns([
