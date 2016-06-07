@@ -13,63 +13,55 @@ use Backpack\LangFileManager\app\Http\Requests\LanguageRequest as UpdateRequest;
 
 class LanguageCrudController extends CrudController
 {
-    public $crud = [
-                        'model' => "Backpack\LangFileManager\app\Models\Language",
-                        'entity_name' => 'language',
-                        'entity_name_plural' => 'languages',
-                        'route' => 'admin/language',
+    public function __construct() {
+        parent::__construct();
 
-                        // *****
-                        // COLUMNS
-                        // *****
-                        //
-                        // Define the columns for the table view as an array:
-                        //
-                        'columns' => [
-                                            [
-                                                'name' => 'name',
-                                                'label' => 'Language name',
-                                            ],
-                                            [
-                                                'name' => 'active',
-                                                'label' => 'Active',
-                                                'type' => 'boolean',
-                                            ],
-                                            [
-                                                'name' => 'default',
-                                                'label' => 'Default',
-                                                'type' => 'boolean',
-                                            ],
-                                    ],
-                        'fields' => [
-                                        [
-                                            'name' => 'name',
-                                            'label' => 'Language Name',
-                                            'type' => 'text',
-                                        ],
-                                        [
-                                            'name' => 'abbr',
-                                            'label' => 'Code (ISO 639-1)',
-                                            'type' => 'text',
-                                        ],
-                                        [
-                                            'name' => 'flag',
-                                            'label' => 'Flag image',
-                                            'type' => 'browse',
-                                        ],
-                                        [
-                                            'name' => 'active',
-                                            'label' => 'Active',
-                                            'type' => 'checkbox',
-                                        ],
-                                        [
-                                            'name' => 'default',
-                                            'label' => 'Default',
-                                            'type' => 'checkbox',
-                                        ],
-                                    ],
+        $this->crud->setModel("Backpack\LangFileManager\app\Models\Language");
+        $this->crud->setRoute("admin/language");
+        $this->crud->setEntityNameStrings('language', 'languages');
 
-                        ];
+        $this->crud->setColumns([
+            [
+                'name' => 'name',
+                'label' => 'Language name',
+            ],
+            [
+                'name' => 'active',
+                'label' => 'Active',
+                'type' => 'boolean',
+            ],
+            [
+                'name' => 'default',
+                'label' => 'Default',
+                'type' => 'boolean',
+            ],
+        ]);
+        $this->crud->addField([
+            'name' => 'name',
+            'label' => 'Language Name',
+            'type' => 'text',
+        ]);
+        $this->crud->addField([
+            'name' => 'abbr',
+            'label' => 'Code (ISO 639-1)',
+            'type' => 'text',
+        ]);
+        $this->crud->addField([
+            'name' => 'flag',
+            'label' => 'Flag image',
+            'type' => 'browse',
+        ]);
+        $this->crud->addField([
+            'name' => 'active',
+            'label' => 'Active',
+            'type' => 'checkbox',
+        ]);
+        $this->crud->addField([
+            'name' => 'default',
+            'label' => 'Default',
+            'type' => 'checkbox',
+        ]);
+    }
 
     public function store(StoreRequest $request)
     {
@@ -94,7 +86,7 @@ class LanguageCrudController extends CrudController
         }
 
         $langfile->setFile($file);
-
+        $this->data['crud'] = $this->crud;
         $this->data['currentFile'] = $file;
         $this->data['currentLang'] = $lang ?: config('app.locale');
         $this->data['currentLangObj'] = Language::where('abbr', '=', $this->data['currentLang'])->first();
