@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
+[![Build Status](https://img.shields.io/travis/Laravel-Backpack/langfilemanager/master.svg?style=flat-square)](https://travis-ci.org/Laravel-Backpack/langfilemanager)
 [![Coverage Status][ico-scrutinizer]][link-scrutinizer]
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Style CI](https://styleci.io/repos/53691643/shield)](https://styleci.io/repos/53691643)
