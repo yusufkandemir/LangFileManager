@@ -1,6 +1,6 @@
 <?php
 
-namespace Backpack\TranslationManager\app\Http\Requests;
+namespace Backpack\LangFileManager\app\Http\Requests;
 
 use App\Http\Requests\Request;
 use Backpack\CRUD\app\Http\Requests\CrudRequest as CrudRequest;
