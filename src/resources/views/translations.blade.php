@@ -3,12 +3,12 @@
 @section('header')
 	<section class="content-header">
 	  <h1>
-	    Translate <span class="text-lowercase">site texts</span>
+	    {{ trans('backpack::langfilemanager.translate') }} <span class="text-lowercase">{{ trans('backpack::langfilemanager.site_texts') }}</span>
 	  </h1>
 	  <ol class="breadcrumb">
-	    <li><a href="{{ url('admin/dashboard') }}">Admin</a></li>
+	    <li><a href="{{ url('admin/dashboard') }}">{{ trans('backpack::crud.admin') }}</a></li>
 	    <li><a href="{{ url($crud->route) }}" class="text-capitalize">{{ $crud->entity_name_plural }}</a></li>
-	    <li class="active">{{ trans('backpack::crud.edit') }} texts</li>
+	    <li class="active">{{ trans('backpack::crud.edit') }} {{ trans('backpack::langfilemanager.texts') }}</li>
 	  </ol>
 	</section>
 @endsection
@@ -17,17 +17,17 @@
 <!-- Default box -->
   <div class="box">
   	<div class="box-header with-border">
-	  <h3 class="box-title">Language:
+	  <h3 class="box-title">{{ ucfirst(trans('backpack::langfilemanager.language')) }}:
 		@foreach ($languages as $lang)
 			@if ($currentLang == $lang->abbr)
 				{{{ $lang->name }}}
 			@endif
 		@endforeach
 		<small>
-			 &nbsp; Switch to:
+			 &nbsp; {{ trans('backpack::langfilemanager.switch_to') }}: &nbsp;
 			<select name="language_switch" id="language_switch">
 				@foreach ($languages as $lang)
-				<option value="{{ url("admin/language/texts/{$lang->abbr}") }}" {{ $currentLang == $lang->abbr ? 'selected' : ''}}>{{{ $lang->name }}}</option>
+				<option value="{{ url("admin/language/texts/{$lang->abbr}") }}" {{ $currentLang == $lang->abbr ? 'selected' : ''}}>{{ $lang->name }}</option>
 				@endforeach
 			</select>
 		</small>
@@ -39,7 +39,7 @@
 		<ul class="nav nav-tabs">
 			@foreach ($langFiles as $file)
 			<li class="{{ $file['active'] ? 'active' : '' }}">
-				<a href="{{ $file['url'] }}">{{{ $file['name'] }}}</a>
+				<a href="{{ $file['url'] }}">{{ $file['name'] }}</a>
 			</li>
 			@endforeach
 		</ul>
@@ -51,13 +51,13 @@
 				{!! Form::button(trans('backpack::crud.save'), array('type' => 'submit', 'class' => 'btn btn-success submit pull-right hidden-xs hidden-sm', 'style' => "margin-top: -60px;")) !!}
 				<div class="form-group hidden-sm hidden-xs">
 					<div class="col-sm-2 text-right">
-						<h4>Key</h4>
+						<h4>{{ trans('backpack::langfilemanager.key') }}</h4>
 					</div>
 					<div class="hidden-sm hidden-xs col-md-5">
-						<h4>{{{ $browsingLangObj->name }}} text</h4>
+						<h4>{{ trans('backpack::langfilemanager.language_text', ['language_name' => $browsingLangObj->name]) }}</h4>
 					</div>
 					<div class="col-sm-10 col-md-5">
-						<h4>{{{ $currentLangObj->name }}} translation</h4>
+						<h4>{{ trans('backpack::langfilemanager.language_translation', ['language_name' => $currentLangObj->name]) }}</h4>
 					</div>
 				</div>
 				{!! $langfile->displayInputs($fileArray) !!}
@@ -67,7 +67,7 @@
 				</div>
 			{!! Form::close() !!}
 		@else
-			<em>{{{ trans('backpack::langfilemanager.empty_file') }}}</em>
+			<em>{{ trans('backpack::langfilemanager.empty_file') }}</em>
 		@endif
 	</section>
     </div><!-- /.box-body -->

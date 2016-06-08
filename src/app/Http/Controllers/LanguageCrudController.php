@@ -19,47 +19,47 @@ class LanguageCrudController extends CrudController
 
         $this->crud->setModel("Backpack\LangFileManager\app\Models\Language");
         $this->crud->setRoute('admin/language');
-        $this->crud->setEntityNameStrings('language', 'languages');
+        $this->crud->setEntityNameStrings(trans('backpack::langfilemanager.language'), trans('backpack::langfilemanager.languages'));
 
         $this->crud->setColumns([
             [
                 'name' => 'name',
-                'label' => 'Language name',
+                'label' => trans('backpack::langfilemanager.language_name'),
             ],
             [
                 'name' => 'active',
-                'label' => 'Active',
+                'label' => trans('backpack::langfilemanager.active'),
                 'type' => 'boolean',
             ],
             [
                 'name' => 'default',
-                'label' => 'Default',
+                'label' => trans('backpack::langfilemanager.default'),
                 'type' => 'boolean',
             ],
         ]);
         $this->crud->addField([
             'name' => 'name',
-            'label' => 'Language Name',
+            'label' => trans('backpack::langfilemanager.language_name'),
             'type' => 'text',
         ]);
         $this->crud->addField([
             'name' => 'abbr',
-            'label' => 'Code (ISO 639-1)',
+            'label' => trans('backpack::langfilemanager.code_iso639-1'),
             'type' => 'text',
         ]);
         $this->crud->addField([
             'name' => 'flag',
-            'label' => 'Flag image',
+            'label' => trans('backpack::langfilemanager.flag_image'),
             'type' => 'browse',
         ]);
         $this->crud->addField([
             'name' => 'active',
-            'label' => 'Active',
+            'label' => trans('backpack::langfilemanager.active'),
             'type' => 'checkbox',
         ]);
         $this->crud->addField([
             'name' => 'default',
-            'label' => 'Default',
+            'label' => trans('backpack::langfilemanager.default'),
             'type' => 'checkbox',
         ]);
     }
@@ -79,7 +79,7 @@ class LanguageCrudController extends CrudController
         // SECURITY
         // check if that file isn't forbidden in the config file
         if (in_array($file, config('langfilemanager.language_ignore'))) {
-            abort('403', 'This language file cannot be edited online.');
+            abort('403', trans('backpack::langfilemanager.cant_edit_online'));
         }
 
         if ($lang) {
@@ -96,7 +96,7 @@ class LanguageCrudController extends CrudController
         $this->data['langFiles'] = $langfile->getlangFiles();
         $this->data['fileArray'] = $langfile->getFileContent();
         $this->data['langfile'] = $langfile;
-        $this->data['title'] = 'Translations';
+        $this->data['title'] = trans('backpack::langfilemanager.translations');
 
         return view('langfilemanager::translations', $this->data);
     }
@@ -106,7 +106,7 @@ class LanguageCrudController extends CrudController
         // SECURITY
         // check if that file isn't forbidden in the config file
         if (in_array($file, config('langfilemanager.language_ignore'))) {
-            abort('403', 'This language file cannot be edited online.');
+            abort('403', trans('backpack::langfilemanager.cant_edit_online'));
         }
 
         $message = trans('error.error_general');
@@ -121,12 +121,12 @@ class LanguageCrudController extends CrudController
         $fields = $langfile->testFields($request->all());
         if (empty($fields)) {
             if ($langfile->setFileContent($request->all())) {
-                \Alert::success('Saved')->flash();
+                \Alert::success(trans('backpack::langfilemanager.saved'))->flash();
                 $status = true;
             }
         } else {
             $message = trans('admin.language.fields_required');
-            \Alert::error('Please fill all fields')->flash();
+            \Alert::error(trans('backpack::langfilemanager.please_fill_all_fields'))->flash();
         }
 
         return redirect()->back();
