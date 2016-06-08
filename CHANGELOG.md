@@ -20,6 +20,17 @@ All Notable changes to `Backpack LangFileManager` will be documented in this fil
 - Nothing
 
 
+## [1.0.10] - 2016-06-07
+
+### Added
+- Using Backpack\CRUD v2 (with new API);
+- Bogus unit test;
+
+### Added
+- Code style issues;
+- Namespace error;
+
+
 ## [1.0.8] - 2016-03-16
 
 ### Fixed
