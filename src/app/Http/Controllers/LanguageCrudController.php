@@ -71,6 +71,11 @@ class LanguageCrudController extends CrudController
 
     public function store(StoreRequest $request)
     {
+	    $defaultLang = Language::where('default', 1)->first();
+
+	    // Copy the default language folder to the new language folder
+	    \File::copyDirectory(resource_path('lang/' . $defaultLang->abbr), resource_path('lang/' . $request->input('abbr')));
+	    
         return parent::storeCrud();
     }
 
