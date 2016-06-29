@@ -83,7 +83,7 @@ class LanguageCrudController extends CrudController
     {
         // SECURITY
         // check if that file isn't forbidden in the config file
-        if (in_array($file, config('langfilemanager.language_ignore'))) {
+        if (in_array($file, config('backpack.langfilemanager.language_ignore'))) {
             abort('403', trans('backpack::langfilemanager.cant_edit_online'));
         }
 
@@ -110,7 +110,7 @@ class LanguageCrudController extends CrudController
     {
         // SECURITY
         // check if that file isn't forbidden in the config file
-        if (in_array($file, config('langfilemanager.language_ignore'))) {
+        if (in_array($file, config('backpack.langfilemanager.language_ignore'))) {
             abort('403', trans('backpack::langfilemanager.cant_edit_online'));
         }
 

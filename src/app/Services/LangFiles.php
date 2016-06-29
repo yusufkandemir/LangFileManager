@@ -73,7 +73,7 @@ class LangFiles
         foreach (scandir($this->getLangPath(), SCANDIR_SORT_DESCENDING) as $file) {
             $fileName = str_replace('.php', '', $file);
 
-            if (! in_array($fileName, array_merge(['.', '..'], config('langfilemanager.language_ignore')))) {
+            if (! in_array($fileName, array_merge(['.', '..'], config('backpack.langfilemanager.language_ignore')))) {
                 $fileList[] = [
                     'name' => ucfirst(str_replace('_', ' ', $fileName)),
                     'url' => url("admin/language/texts/{$this->lang}/{$fileName}"),
