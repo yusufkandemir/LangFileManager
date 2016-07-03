@@ -20,9 +20,17 @@ All Notable changes to `Backpack LangFileManager` will be documented in this fil
 - Nothing
 
 
+## [1.0.12] - 2016-07-03
+
+### Fixed by [Federico Liva](http://www.federicoliva.info)
+- Native language can also be translated now.
+- Clone default language folder on new language.
+- Config values were ignored.
+
+
 ## [1.0.11] - 2016-06-13
 
-### Added
+### Added by [Federico Liva](http://www.federicoliva.info)
 - Add translations and italian localization
 
 
