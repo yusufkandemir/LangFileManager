@@ -31,14 +31,14 @@ class LangFileManagerServiceProvider extends ServiceProvider
         // $this->loadTranslationsFrom(realpath(__DIR__.'/resources/lang'), 'backpack');
 
         // publish config file
-        $this->publishes([__DIR__.'/config/langfilemanager.php' => config_path('backpack/langfilemanager.php')], 'config');
+        $this->publishes([__DIR__.'/config/backpack/langfilemanager.php' => config_path('backpack/langfilemanager.php')], 'config');
         // publish views
         $this->publishes([__DIR__.'/resources/views' => resource_path('views/vendor/backpack/langfilemanager')], 'views');
         // publish lang files
         $this->publishes([__DIR__.'/resources/lang' => resource_path('lang/vendor/backpack')], 'lang');
 
         // use the vendor configuration file as fallback
-        $this->mergeConfigFrom(__DIR__.'/config/langfilemanager.php', 'langfilemanager');
+        $this->mergeConfigFrom(__DIR__.'/config/backpack/langfilemanager.php', 'langfilemanager');
     }
 
     /**

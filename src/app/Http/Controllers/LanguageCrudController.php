@@ -43,6 +43,11 @@ class LanguageCrudController extends CrudController
             'type' => 'text',
         ]);
         $this->crud->addField([
+            'name' => 'native',
+            'label' => trans('backpack::langfilemanager.native_name'),
+            'type' => 'text',
+        ]);
+        $this->crud->addField([
             'name' => 'abbr',
             'label' => trans('backpack::langfilemanager.code_iso639-1'),
             'type' => 'text',
@@ -66,6 +71,11 @@ class LanguageCrudController extends CrudController
 
     public function store(StoreRequest $request)
     {
+        $defaultLang = Language::where('default', 1)->first();
+
+        // Copy the default language folder to the new language folder
+        \File::copyDirectory(resource_path('lang/'.$defaultLang->abbr), resource_path('lang/'.$request->input('abbr')));
+
         return parent::storeCrud();
     }
 
@@ -78,7 +88,7 @@ class LanguageCrudController extends CrudController
     {
         // SECURITY
         // check if that file isn't forbidden in the config file
-        if (in_array($file, config('langfilemanager.language_ignore'))) {
+        if (in_array($file, config('backpack.langfilemanager.language_ignore'))) {
             abort('403', trans('backpack::langfilemanager.cant_edit_online'));
         }
 
@@ -105,7 +115,7 @@ class LanguageCrudController extends CrudController
     {
         // SECURITY
         // check if that file isn't forbidden in the config file
-        if (in_array($file, config('langfilemanager.language_ignore'))) {
+        if (in_array($file, config('backpack.langfilemanager.language_ignore'))) {
             abort('403', trans('backpack::langfilemanager.cant_edit_online'));
         }
 

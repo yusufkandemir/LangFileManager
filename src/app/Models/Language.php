@@ -11,7 +11,7 @@ class Language extends Model
 
     protected $table = 'languages';
 
-    protected $fillable = ['name', 'flag', 'abbr', 'active', 'default'];
+    protected $fillable = ['name', 'flag', 'abbr', 'native', 'active', 'default'];
 
     public $timestamps = false;
 

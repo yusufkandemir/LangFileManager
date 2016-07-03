@@ -33,5 +33,6 @@ return [
     'texts'                  => 'testi',
     'translate'              => 'Traduci',
     'translations'           => 'Traduzioni',
+    'native_name'            => 'Nome nativo',
 
 ];
