@@ -83,7 +83,7 @@ class LangFiles
         }
 
         // Sort files by name for better readability
-        usort($fileList, function($a, $b) {
+        usort($fileList, function ($a, $b) {
             return strnatcmp($a['name'], $b['name']);
         });
 
