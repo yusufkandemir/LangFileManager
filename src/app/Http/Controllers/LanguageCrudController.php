@@ -93,12 +93,11 @@ class LanguageCrudController extends CrudController
      */
     public function destroy($id)
     {
-        $language      = Language::find($id);
+        $language = Language::find($id);
         $destroyResult = parent::destroy($id);
 
-        if ($destroyResult)
-        {
-            \File::deleteDirectory(resource_path('lang/' . $language->abbr));
+        if ($destroyResult) {
+            \File::deleteDirectory(resource_path('lang/'.$language->abbr));
         }
 
         return $destroyResult;
