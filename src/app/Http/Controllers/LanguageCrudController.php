@@ -84,6 +84,25 @@ class LanguageCrudController extends CrudController
         return parent::updateCrud();
     }
 
+    /**
+     * After delete remove also the language folder.
+     *
+     * @param int $id
+     *
+     * @return string
+     */
+    public function destroy($id)
+    {
+        $language = Language::find($id);
+        $destroyResult = parent::destroy($id);
+
+        if ($destroyResult) {
+            \File::deleteDirectory(resource_path('lang/'.$language->abbr));
+        }
+
+        return $destroyResult;
+    }
+
     public function showTexts(LangFiles $langfile, Language $languages, $lang = '', $file = 'site')
     {
         // SECURITY
