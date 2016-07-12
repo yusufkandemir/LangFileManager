@@ -19,6 +19,10 @@ All Notable changes to `Backpack LangFileManager` will be documented in this fil
 ### Security
 - Nothing
 
+## [1.0.13] - 2016-07-03
+### Added by [Federico Liva](http://www.federicoliva.info)
+- Sort file list alphabetically for better readability
+
 
 ## [1.0.12] - 2016-07-03
 
