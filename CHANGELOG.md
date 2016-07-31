@@ -19,6 +19,13 @@ All Notable changes to `Backpack LangFileManager` will be documented in this fil
 ### Security
 - Nothing
 
+
+## [1.0.14] - 2016-07-31
+
+### Fixed
+- Working bogus unit tests.
+
+
 ## [1.0.13] - 2016-07-12
 ### Added by [Federico Liva](http://www.federicoliva.info)
 - Sort file list alphabetically for better readability
