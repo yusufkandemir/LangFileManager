@@ -20,7 +20,7 @@ All Notable changes to `Backpack LangFileManager` will be documented in this fil
 - Nothing
 
 
-## [1.0.14] - 2016-07-31
+## [1.0.15] - 2016-07-31
 
 ### Fixed
 - Working bogus unit tests.
