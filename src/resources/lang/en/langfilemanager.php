@@ -30,7 +30,7 @@ return [
     'saved'                  => 'Saved',
     'site_texts'             => 'Site texts',
     'switch_to'              => 'Switch to',
-    'texts'                  => 'testi',
+    'texts'                  => 'Texts',
     'translate'              => 'Translate',
     'translations'           => 'Translations',
     'native_name'            => 'Native name',
