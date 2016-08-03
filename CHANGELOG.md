@@ -20,6 +20,12 @@ All Notable changes to `Backpack LangFileManager` will be documented in this fil
 - Nothing
 
 
+## [1.0.16] - 2016-08-03
+
+### Fixed
+- Small english text change.
+
+
 ## [1.0.15] - 2016-07-31
 
 ### Fixed
