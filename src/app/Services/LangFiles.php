@@ -184,7 +184,7 @@ class LangFiles
      */
     private function sanitize($str)
     {
-        return e(trim($str));
+        return trim($str);
     }
 
     /**
