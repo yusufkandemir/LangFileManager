@@ -7,10 +7,11 @@ echo Form::label($key, str_replace(['_', '-'], ' ', $key), array('class' => 'col
 			<?php
 			if (count($parents)) {
 				$parents_array = implode('.', $parents);
-				echo trans($lang_file_name.'.'.$parents_array.'.'.$key);
+				$string_text = trans($lang_file_name . '.' . $parents_array . '.' . $key);
 			} else {
-				echo trans($lang_file_name.'.'.$key);
+				$string_text = trans($lang_file_name . '.' .$key);
 			}
+			echo htmlentities($string_text);
 			?>
 		</div>
 	</div>
