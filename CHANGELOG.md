@@ -20,6 +20,12 @@ All Notable changes to `Backpack LangFileManager` will be documented in this fil
 - Nothing
 
 
+## [1.0.17] - 2016-09-21
+
+### Fixed
+- Translation texts can hold HTML.
+
+
 ## [1.0.16] - 2016-08-03
 
 ### Fixed
