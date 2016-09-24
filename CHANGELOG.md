@@ -20,6 +20,12 @@ All Notable changes to `Backpack LangFileManager` will be documented in this fil
 - Nothing
 
 
+## [1.0.18] - 2016-09-24
+
+### Fixed
+- Routes now follow base prefix - thanks to [Twaambo Haamucenje](https://github.com/twoSeats);
+
+
 ## [1.0.17] - 2016-09-21
 
 ### Fixed
