@@ -3,10 +3,10 @@
 namespace Backpack\LangFileManager\app\Http\Controllers;
 
 use App\Http\Requests;
-use Backpack\CRUD\app\Http\Controllers\CrudController;
-use Backpack\LangFileManager\app\Services\LangFiles;
-use Backpack\LangFileManager\app\Models\Language;
 use Illuminate\Http\Request;
+use Backpack\LangFileManager\app\Models\Language;
+use Backpack\LangFileManager\app\Services\LangFiles;
+use Backpack\CRUD\app\Http\Controllers\CrudController;
 // VALIDATION: change the requests to match your own file names if you need form validation
 use Backpack\LangFileManager\app\Http\Requests\LanguageRequest as StoreRequest;
 use Backpack\LangFileManager\app\Http\Requests\LanguageRequest as UpdateRequest;

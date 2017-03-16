@@ -2,8 +2,8 @@
 
 namespace Backpack\LangFileManager;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Routing\Router;
+use Illuminate\Support\ServiceProvider;
 use Backpack\LangFileManager\app\Services\LangFiles;
 
 class LangFileManagerServiceProvider extends ServiceProvider
