@@ -20,6 +20,12 @@ All Notable changes to `Backpack LangFileManager` will be documented in this fil
 - Nothing
 
 
+## [1.0.19] - 2017-08-11
+
+### Added
+- Brasilian Portugese (pt_BR) language files, thanks to [Guilherme Augusto Henschel](https://github.com/cenoura);
+
+
 ## [1.0.18] - 2016-09-24
 
 ### Fixed
