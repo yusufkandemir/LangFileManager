@@ -20,6 +20,12 @@ All Notable changes to `Backpack LangFileManager` will be documented in this fil
 - Nothing
 
 
+## [1.0.21] - 2017-08-30
+
+### Fixed
+- disabled languages were still accessible;
+
+
 ## [1.0.20] - 2017-08-30
 
 ### Added
