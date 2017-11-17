@@ -32,7 +32,7 @@ return [
     'switch_to'              => 'التغيير إلى',
     'texts'                  => 'النصوص',
     'translate'              => 'ترجم',
-    'translations'           => "ترجمة",
+    'translations'           => 'ترجمة',
     'native_name'            => 'اﻻسم اﻷصلي',
 
 ];
