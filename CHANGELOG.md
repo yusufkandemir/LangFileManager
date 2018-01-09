@@ -20,6 +20,12 @@ All Notable changes to `Backpack LangFileManager` will be documented in this fil
 - Nothing
 
 
+## [1.0.22] - 2018-01-xx
+
+### Fixed
+- Language CRUD works with latest Backpack\CRUD version (3.3);
+
+
 ## [1.0.21] - 2017-08-30
 
 ### Fixed
