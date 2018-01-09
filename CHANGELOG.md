@@ -24,6 +24,7 @@ All Notable changes to `Backpack LangFileManager` will be documented in this fil
 
 ### Added
 - Arabic translation (thanks to [AbdelRahman Wahdan](https://github.com/abdelrahmanahmed));
+- original_name for translation fileList;
 
 ### Fixed
 - Language CRUD works with latest Backpack\CRUD version (3.3);
