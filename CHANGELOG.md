@@ -28,6 +28,7 @@ All Notable changes to `Backpack LangFileManager` will be documented in this fil
 
 ### Fixed
 - Language CRUD works with latest Backpack\CRUD version (3.3);
+- is_dir() on getlangFiles() to prevent error on no lang directories found;
 
 
 ## [1.0.21] - 2017-08-30
