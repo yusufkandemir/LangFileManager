@@ -20,7 +20,10 @@ All Notable changes to `Backpack LangFileManager` will be documented in this fil
 - Nothing
 
 
-## [1.0.22] - 2018-01-xx
+## [1.0.22] - 2018-01-09
+
+### Added
+- Arabic translation (thanks to [AbdelRahman Wahdan](https://github.com/abdelrahmanahmed));
 
 ### Fixed
 - Language CRUD works with latest Backpack\CRUD version (3.3);
