@@ -47,7 +47,6 @@ class LangFileManagerServiceProvider extends ServiceProvider
 
         // publish the migrations and seeds
         $this->publishes([__DIR__.'/database/migrations/' => database_path('migrations')], 'migrations');
-        $this->publishes([__DIR__.'/database/seeds/' => database_path('seeds')], 'seeds');
 
         // use the vendor configuration file as fallback
         $this->mergeConfigFrom(__DIR__.'/config/backpack/langfilemanager.php', 'langfilemanager');
