@@ -15,7 +15,7 @@ A quick interface to edit language files, for Laravel Backpack.
 
 ![Edit view for Backpack/LangFileManager](https://dl.dropboxusercontent.com/u/2431352/backpack_langfilemanager.png)
 
-## Install
+## Install in Laravel 5.5 / 5.6
 
 ### Step 1. Install via Composer
 
@@ -23,18 +23,11 @@ A quick interface to edit language files, for Laravel Backpack.
 $ composer require backpack/langfilemanager
 ```
 
-### Step 2. Add the service provider
-
-In your config/app.php, add this to the providers array:
+### Step 2. Run the migration, seed and file publishing
 
 ``` bash
-Backpack\LangFileManager\LangFileManagerServiceProvider::class,
-```
-
-### Step 3. Run the migration, seed and file publishing
-
-``` bash
-$ php artisan migrate --path=vendor/backpack/langfilemanager/src/database/migrations
+$ php artisan vendor:publish --provider="Backpack\LangFileManager\LangFileManagerServiceProvider" --tag="migrations" #publish the migration file
+$ php artisan migrate
 $ php artisan db:seed --class="Backpack\LangFileManager\database\seeds\LanguageTableSeeder"
 $ php artisan vendor:publish --provider="Backpack\LangFileManager\LangFileManagerServiceProvider" --tag="config" #publish the config file
 $ php artisan vendor:publish --provider="Backpack\LangFileManager\LangFileManagerServiceProvider" --tag="lang" #publish the lang files
