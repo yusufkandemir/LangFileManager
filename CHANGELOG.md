@@ -20,6 +20,12 @@ All Notable changes to `Backpack LangFileManager` will be documented in this fil
 - Nothing
 
 
+## [1.0.25] - 2018-03-13
+
+### Fixed
+- fixed seeds namespace;
+
+
 ## [1.0.24] - 2018-03-13
 
 ### Added
