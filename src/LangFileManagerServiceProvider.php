@@ -22,7 +22,6 @@ class LangFileManagerServiceProvider extends ServiceProvider
      */
     public $routeFilePath = '/routes/backpack/langfilemanager.php';
 
-
     /**
      * Perform post-registration booting of services.
      *
