@@ -28,8 +28,8 @@ class LangFiles
     }
 
     /**
-     * get the content of a language file as an array sorted ascending.
-     * @return	array|false
+     * Get the content of a language file as an array sorted ascending.
+     * @return  array|false
      */
     public function getFileContent()
     {
@@ -46,8 +46,8 @@ class LangFiles
     }
 
     /**
-     * rewrite the file with the modified texts.
-     * @param	array 		$postArray	the data received from the form
+     * Rewrite the file with the modified texts.
+     * @param   array       $postArray  the data received from the form
      * @return  int
      */
     public function setFileContent($postArray)
@@ -55,16 +55,17 @@ class LangFiles
         $postArray = $this->prepareContent($postArray);
 
         $return = (int) file_put_contents(
-                $this->getFilePath(),
-                print_r("<?php\n\nreturn ".$this->var_export54($postArray).";\n", true)
-            );
+            $this->getFilePath(),
+            print_r("<?php\n\nreturn ".$this->var_export54($postArray).";\n", true)
+        );
 
         return $return;
     }
 
     /**
-     * get the language files that can be edited, to ignore a file add it in the config/admin file to language_ignore key.
-     * @return	array
+     * Get the language files that can be edited,
+     * to ignore a file add it in the config/admin file to language_ignore key.
+     * @return  array
      */
     public function getlangFiles()
     {
@@ -92,9 +93,9 @@ class LangFiles
     }
 
     /**
-     * check if all the fields were completed.
-     * @param 	array		$postArray		the array containing the data
-     * @return	array
+     * Check if all the fields were completed.
+     * @param   array       $postArray      the array containing the data
+     * @return  array
      */
     public function testFields($postArray)
     {
@@ -120,12 +121,12 @@ class LangFiles
     }
 
     /**
-     * display the form that permits the editing.
-     * @param 	array  		$fileArray		the array with all the texts
-     * @param 	array  		$parents  		all the ancestor keys of the current key
-     * @param 	string 		$parent   		the parent key of the current key
-     * @param 	int		$level    		the current level
-     * @return	void
+     * Display the form that permits the editing.
+     * @param   array       $fileArray      the array with all the texts
+     * @param   array       $parents        all the ancestor keys of the current key
+     * @param   string      $parent         the parent key of the current key
+     * @param   int         $level          the current level
+     * @return  void
      */
     public function displayInputs($fileArray, $parents = [], $parent = '', $level = 0)
     {
@@ -135,16 +136,28 @@ class LangFiles
         }
         foreach ($fileArray as $key => $item) {
             if (is_array($item)) {
-                echo view()->make('langfilemanager::language_headers', ['header' => $key, 'parents' => $parents, 'level' => $level, 'item' => $item, 'langfile' => $this, 'lang_file_name' => $this->file])->render();
+                echo view()->make('langfilemanager::language_headers', [
+                    'header' => $key,
+                    'parents' => $parents,
+                    'level' => $level,
+                    'item' => $item,
+                    'langfile' => $this,
+                    'lang_file_name' => $this->file
+                ])->render();
             } else {
-                echo view()->make('langfilemanager::language_inputs', ['key' => $key, 'item' => $item, 'parents' => $parents, 'lang_file_name' => $this->file])->render();
+                echo view()->make('langfilemanager::language_inputs', [
+                    'key' => $key,
+                    'item' => $item,
+                    'parents' => $parents,
+                    'lang_file_name' => $this->file
+                ])->render();
             }
         }
     }
 
     /**
-     * create the array that will be saved in the file.
-     * @param  array		$postArray		the array to be transformed
+     * Create the array that will be saved in the file.
+     * @param array $postArray The array to be transformed
      * @return array
      */
     private function prepareContent($postArray)
@@ -159,11 +172,12 @@ class LangFiles
             if (is_array($item)) {
                 if (isset($item['before'])) {
                     $items_arr = array_map(
-                            function ($item1, $item2) {
+                        function ($item1, $item2) {
                                 return $item1.$item2;
-                            },
-                            str_replace('|', '&#124;', $item['before']), str_replace('|', '&#124;', $item['after'])
-                        );
+                        },
+                        str_replace('|', '&#124;', $item['before']),
+                        str_replace('|', '&#124;', $item['after'])
+                    );
                     $value = $this->sanitize(implode('|', $items_arr));
                 } else {
                     $value = $this->sanitize(implode('|', str_replace('|', '&#124;', $item['after'])));
@@ -179,9 +193,9 @@ class LangFiles
     }
 
     /**
-     * add filters to the values inserted by the user.
-     * @param 	string		$str		the string to be sanitized
-     * @return	string
+     * Add filters to the values inserted by the user.
+     * @param   string      $str        the string to be sanitized
+     * @return  string
      */
     private function sanitize($str)
     {
@@ -189,11 +203,11 @@ class LangFiles
     }
 
     /**
-     * set a value in a multidimensional array when knowing the keys.
-     * @param 	array 		$data 		the array that will be modified
-     * @param 	array 		$keys 		the keys (path)
-     * @param 	string		$value		the value to be added
-     * @return	array
+     * Set a value in a multidimensional array when knowing the keys.
+     * @param   array       $data       the array that will be modified
+     * @param   array       $keys       the keys (path)
+     * @param   string      $value      the value to be added
+     * @return  array
      */
     private function setArrayValue(&$data, $keys, $value)
     {
