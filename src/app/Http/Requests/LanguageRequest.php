@@ -2,10 +2,9 @@
 
 namespace Backpack\LangFileManager\app\Http\Requests;
 
-use App\Http\Requests\Request;
-use Backpack\CRUD\app\Http\Requests\CrudRequest as CrudRequest;
+use Illuminate\Foundation\Http\FormRequest;
 
-class LanguageRequest extends CrudRequest
+class LanguageRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
