@@ -56,7 +56,7 @@ class LangFiles
 
         $return = (int) file_put_contents(
                 $this->getFilePath(),
-                print_r("<?php \n\n return ".$this->var_export54($postArray).';', true)
+                print_r("<?php\n\nreturn ".$this->var_export54($postArray).";\n", true)
             );
 
         return $return;
@@ -218,19 +218,18 @@ class LangFiles
     {
         switch (gettype($var)) {
             case 'string':
-                return '"'.addcslashes($var, "\\\$\"\r\n\t\v\f").'"';
+                return "'".addcslashes($var, "\\\$'\r\n\t\v\f")."'";
             case 'array':
-                $indexed = array_keys($var) === range(0, count($var) - 1);
                 $r = [];
                 foreach ($var as $key => $value) {
                     $r[] = "$indent    "
-                         .($indexed ? '' : $this->var_export54($key).' => ')
+                         .(is_numeric($key) ? '' : $this->var_export54($key).' => ')
                          .$this->var_export54($value, "$indent    ");
                 }
 
-                return "[\n".implode(",\n", $r)."\n".$indent.']';
+                return "[\n".implode(",\n", $r).",\n{$indent}]";
             case 'boolean':
-                return $var ? 'TRUE' : 'FALSE';
+                return $var ? 'true' : 'false';
             default:
                 return var_export($var, true);
         }
