@@ -142,14 +142,14 @@ class LangFiles
                     'level' => $level,
                     'item' => $item,
                     'langfile' => $this,
-                    'lang_file_name' => $this->file
+                    'lang_file_name' => $this->file,
                 ])->render();
             } else {
                 echo view()->make('langfilemanager::language_inputs', [
                     'key' => $key,
                     'item' => $item,
                     'parents' => $parents,
-                    'lang_file_name' => $this->file
+                    'lang_file_name' => $this->file,
                 ])->render();
             }
         }
@@ -173,7 +173,7 @@ class LangFiles
                 if (isset($item['before'])) {
                     $items_arr = array_map(
                         function ($item1, $item2) {
-                                return $item1.$item2;
+                            return $item1 . $item2;
                         },
                         str_replace('|', '&#124;', $item['before']),
                         str_replace('|', '&#124;', $item['after'])
