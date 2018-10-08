@@ -93,34 +93,6 @@ class LangFiles
     }
 
     /**
-     * Check if all the fields were completed.
-     * @param   array       $postArray      the array containing the data
-     * @return  array
-     */
-    public function testFields($postArray)
-    {
-        $returnArray = [];
-
-        foreach ($postArray as $key => $value) {
-            if (is_array($value)) {
-                foreach ($value as $k => $item) {
-                    foreach ($item as $j => $it) {
-                        if (trim($it) == '') {
-                            $returnArray[] = ['parent' => $key, 'child' => $j];
-                        }
-                    }
-                }
-            } else {
-                if (trim($value) == '') {
-                    $returnArray[] = $key;
-                }
-            }
-        }
-
-        return $returnArray;
-    }
-
-    /**
      * Display the form that permits the editing.
      * @param   array       $fileArray      the array with all the texts
      * @param   array       $parents        all the ancestor keys of the current key
