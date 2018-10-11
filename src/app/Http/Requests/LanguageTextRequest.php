@@ -26,7 +26,7 @@ class LanguageTextRequest extends FormRequest
     public function messages()
     {
         return [
-            '*.required' => trans('backpack::langfilemanager.please_fill_all_fields')
+            '*.required' => trans('backpack::langfilemanager.please_fill_all_fields'),
         ];
     }
 }
